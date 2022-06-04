@@ -1,7 +1,7 @@
 name: draggable_expandable_fab
-description: A new flutter package
+description: This Flutter package provides a Expandable and Draggable Floating Button with animation.
 version: 0.0.1
-homepage:
+homepage: https://github.com/Tughra/draggable_expandable_fab
 
 environment:
   sdk: ">=2.17.0 <3.0.0"
