@@ -1,39 +1,87 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
+# Expandable Draggable Fab
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
+This Flutter package provides a Expandable and Draggable Floating Button with animation.
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+![](https://raw.githubusercontent.com/Tughra/draggable_expandable_fab/master/gif/demo1.gif) ![](https://raw.githubusercontent.com/Tughra/draggable_expandable_fab/master/gif/demo2.gif)![](https://raw.githubusercontent.com/Tughra/draggable_expandable_fab/master/gif/demo3.gif)
 
-## Features
+## 💻 Installation
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+In the dependencies: section of your pubspec.yaml, add the following line:
 
-## Getting started
+```yaml
+dependencies:
+  draggable_expandable_fab: <latest version>
+```
+To use the latest changes:
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+```yaml
+  draggable_expandable_fab:
+    git:
+      url: https://github.com/Tughra/draggable_expandable_fab.git
+      ref: master
+```
+## ❔ Usage
 
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+Import this class
 
 ```dart
-const like = 'sample';
+import 'package:draggable_expandable_fab/draggable_expandable_fab.dart';
 ```
 
-## Additional information
+Replace Scaffold's parameters with these to better usage.
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+```dart
+      floatingActionButtonAnimator: NoScalingAnimation(),
+      floatingActionButtonLocation: ExpandableFloatLocation(),
+```
+
+Simple Implementation
+
+```dart
+Scaffold(
+      floatingActionButtonAnimator: NoScalingAnimation(),
+      floatingActionButtonLocation: ExpandableFloatLocation(),
+      floatingActionButton: ExpandableDraggableFab(childrenCount: 3,
+      distance: 100,// Animatiion distance during open and close. 
+      children: [
+        FloatingActionButton(onPressed: (){}),
+        FloatingActionButton(onPressed: (){}),
+        FloatingActionButton(onPressed: (){}),
+      ],),
+      body: Container(),
+    );
+ ```    
+   
+
+
+Full Implementation
+
+```dart
+   final Size _size = MediaQuery.of(context).size;
+    return Scaffold(
+      floatingActionButtonAnimator: NoScalingAnimation(),
+      floatingActionButtonLocation: ExpandableFloatLocation(),
+      floatingActionButton: ExpandableDraggableFab(childrenCount: 3,
+        onTab: (){
+        debugPrint("Tab");
+        },
+        childrenTransition: ChildrenTransition.fadeTransation,
+        initialOpen: false,
+        childrenBoxDecoration: const BoxDecoration(color: Colors.red),
+        enableChildrenAnimation: true,
+        curveAnimation: Curves.linear,
+        reverseAnimation: Curves.linear,
+        childrenType: ChildrenType.columnChildren,
+        closeChildrenRotate: false,
+        childrenAlignment: Alignment.topRight,
+        initialDraggableOffset: Offset(_size.width-90,_size.height-100),
+      distance: 100,// Animation distance during open and close.
+      children: [
+        FloatingActionButton(onPressed: (){}),
+        FloatingActionButton(onPressed: (){}),
+        FloatingActionButton(onPressed: (){}),
+      ],),
+      body: Container(),
+    );
+ ```   
