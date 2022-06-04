@@ -4,9 +4,9 @@
 This Flutter package provides a Expandable and Draggable Floating Button with animation.
 
 <div style="display:flex; justify-content: space-between;">
-<img src="https://raw.githubusercontent.com/Tughra/draggable_expandable_fab/master/gif/demo1.gif" width="300" height="600" />
-<img src="https://raw.githubusercontent.com/Tughra/draggable_expandable_fab/master/gif/demo2.gif" width="300" height="600" />
-<img src="https://raw.githubusercontent.com/Tughra/draggable_expandable_fab/master/gif/demo3.gif" width="300" height="600" />
+<img src="https://raw.githubusercontent.com/Tughra/draggable_expandable_fab/master/gif/demo1.gif" width="250" height="500" />
+<img src="https://raw.githubusercontent.com/Tughra/draggable_expandable_fab/master/gif/demo2.gif" width="250" height="500" />
+<img src="https://raw.githubusercontent.com/Tughra/draggable_expandable_fab/master/gif/demo3.gif" width="250" height="500" />
 </div>
 ## 💻 Installation
 
