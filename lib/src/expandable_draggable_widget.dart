@@ -127,7 +127,7 @@ class _ExpandableDraggableFabState extends State<ExpandableDraggableFab>
         clipBehavior: Clip.none,
         children: [
           AnimatedSwitcher(
-            duration: const Duration(milliseconds: 500),
+            duration:widget.duration?? const Duration(milliseconds: 500),
             transitionBuilder: (Widget child, Animation<double> animation) {
               if(widget.childrenTransition==ChildrenTransition.fadeTransation||widget.childrenTransition==null) {
                 return FadeTransition(opacity: animation, child: child);
@@ -167,15 +167,12 @@ class _ExpandableDraggableFabState extends State<ExpandableDraggableFab>
       parentKey: _key,
       initialOffset:widget.initialDraggableOffset??Offset(
           20, size.height-80),
-      child: ColoredBox(
-        color: Colors.transparent,
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            _buildTapToCloseFab(),
-            _buildTapToOpenFab(),
-          ],
-        ),
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          _buildTapToCloseFab(),
+          _buildTapToOpenFab(),
+        ],
       ),)
         ],
       ),
