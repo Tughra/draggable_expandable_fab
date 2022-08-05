@@ -71,11 +71,11 @@ class ExpandableDraggableFab extends StatefulWidget {
   final BoxDecoration? childrenBoxDecoration;
 
   @override
-  State<ExpandableDraggableFab> createState() => _ExpandableDraggableFabState();
+  State<ExpandableDraggableFab> createState() => ExpandableDraggableFabState();
 //_ExpandableDraggableFabState createState() => _ExpandableDraggableFabState();
 }
 
-class _ExpandableDraggableFabState extends State<ExpandableDraggableFab>
+class ExpandableDraggableFabState extends State<ExpandableDraggableFab>
     with SingleTickerProviderStateMixin {
   late final AnimationController _controller;
   late final Animation<double> _expandAnimation;
