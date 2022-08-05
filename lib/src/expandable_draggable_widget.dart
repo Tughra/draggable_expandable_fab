@@ -105,7 +105,7 @@ class ExpandableDraggableFabState extends State<ExpandableDraggableFab>
     super.dispose();
   }
 
-  void _toggle() {
+  void toggle() {
     if (widget.onTab != null) widget.onTab!();
     setState(() {
       _open = !_open;
@@ -184,7 +184,7 @@ class ExpandableDraggableFabState extends State<ExpandableDraggableFab>
       visible: widget.children.isNotEmpty,
       child: GestureDetector(
 
-        onTap: _toggle,
+        onTap: toggle,
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: widget.closeWidget ??
@@ -251,7 +251,7 @@ class ExpandableDraggableFabState extends State<ExpandableDraggableFab>
           curve: const Interval(0.0, 1.0, curve: Curves.easeInOut),
           duration: _duration,
           child: GestureDetector(
-            onTap: _toggle,
+            onTap: toggle,
             child: widget.openWidget ??
                 Container(
                     decoration: const BoxDecoration(boxShadow: [
