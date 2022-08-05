@@ -8,6 +8,7 @@ This Flutter package provides a Expandable and Draggable Floating Button with an
 <img src="https://raw.githubusercontent.com/Tughra/draggable_expandable_fab/master/gif/demo2.gif" width="250" height="500" />
 <img src="https://raw.githubusercontent.com/Tughra/draggable_expandable_fab/master/gif/demo3.gif" width="250" height="500" />
 </div>
+
 ## 💻 Installation
 
 In the dependencies: section of your pubspec.yaml, add the following line:
